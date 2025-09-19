@@ -11,30 +11,50 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement Variables")]
     [SerializeField] float moveSpeed;
+    [SerializeField] float moveSpeedOnCrouch;
+    float speed;
     Vector2 mov;
 
     [Header("Rotation Variables")]
-    [SerializeField,Tooltip("Más es más rápido"), Range(0.1f, 10f)] float rotSpeed;
+    [SerializeField, Tooltip("Más es más rápido"), Range(0.1f, 10f)] float rotSpeed;
 
     public LayerMask layer;
-
     public bool onCover;
+    public bool onCrouch;
+
+    private void Start()
+    {
+        speed = moveSpeed;
+    }
+
     private void Update()
     {
         Move();
         Rotation();
         AnimationMovement();
-        OnCover();
+        if (Input.GetKeyDown(KeyCode.E)) OnCover();
+        if (Input.GetKeyDown(KeyCode.C)) OnCrouch();
+    }
+    private void OnCrouch()
+    {
+        onCrouch = !onCrouch;
+        anim.SetBool("OnCrouch", onCrouch);
+        speed = onCrouch ? moveSpeedOnCrouch : moveSpeed;
+    }
+    private void OnCrouch(bool temp)
+    {
+        onCrouch = temp;
+        anim.SetBool("OnCrouch", onCrouch);
+        speed = onCrouch ? moveSpeedOnCrouch : moveSpeed;
     }
 
 
     private void OnCover()
     {
-        if (!Input.GetKeyDown(KeyCode.E)) return;
-        
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 1, layer))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 0.25f, layer))
         {
-            transform.forward = hit.normal;
+            OnCrouch(true);
+            LeanTween.value(gameObject, 0, 1, 1).setOnUpdate((value) => { transform.forward = Vector3.Lerp(transform.forward, hit.normal, value); });
             onCover = true;
         }
         else
@@ -51,9 +71,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (onCover) moveDirection =  (-transform.forward * 0 +(transform.right * -mov.x)).normalized;
         else moveDirection = (transform.forward * mov.y
-                                + transform.right * mov.x).normalized;
+                                + transform.right * mov.x);
 
-        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        controller.Move(moveDirection * speed * Time.deltaTime);
     }
 
     void Rotation()
