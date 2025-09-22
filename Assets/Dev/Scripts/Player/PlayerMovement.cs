@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         Move();
         Rotation();
         AnimationMovement();
-        if (Input.GetKeyDown(KeyCode.E)) OnCover();
+        if (Input.GetKeyDown(KeyCode.Q)) OnCover();
         if (Input.GetKeyDown(KeyCode.C)) OnCrouch();
     }
     private void OnCrouch()
@@ -48,14 +49,27 @@ public class PlayerMovement : MonoBehaviour
         speed = onCrouch ? moveSpeedOnCrouch : moveSpeed;
     }
 
-
+    private IEnumerator CheckIfCanBeOnCover()
+    {
+        yield return new WaitForSeconds(1);
+        while (onCover)
+        {
+            if (!Physics.Raycast(transform.position, -transform.forward, out RaycastHit hit, 1, layer))
+            {
+                onCover = false;
+                OnCover();
+            }
+            yield return null;
+        }
+    }
     private void OnCover()
     {
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 0.25f, layer))
         {
             OnCrouch(true);
-            LeanTween.value(gameObject, 0, 1, 1).setOnUpdate((value) => { transform.forward = Vector3.Lerp(transform.forward, hit.normal, value); });
             onCover = true;
+            LeanTween.value(gameObject, 0, 1, 1).setOnUpdate((value) => { transform.forward = Vector3.Lerp(transform.forward, hit.normal, value); });
+            StartCoroutine(CheckIfCanBeOnCover());
         }
         else
             onCover = false;

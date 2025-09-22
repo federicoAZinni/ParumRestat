@@ -3,7 +3,202 @@ guid: 1017dabf0e4bb6b43a512d50c53861f2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ascensor
+    second: {fileID: 2100000, guid: c51b4f106e756684990755cee60027a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BotonesTelefono.001
+    second: {fileID: 2100000, guid: 9d5c0b16b6673d44daea689ff5535bbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Camaras
+    second: {fileID: 2100000, guid: 0c05d16aa1f5b394ca0339c2982f25a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Debilis
+    second: {fileID: 2100000, guid: 790ad350ba5f81845b988a8395d898dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: ac46e2700f217f342b8efaa21f872bb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: fff10e508abaf6c4b97807ba9d585d16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.002
+    second: {fileID: 2100000, guid: 4646fbdab74680748ab7d8a59c72a89e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.003
+    second: {fileID: 2100000, guid: 31443ff1dfbc9f046b9ca925cca7883b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.004
+    second: {fileID: 2100000, guid: 557eadbb3a25a8d4282c07f2fe3c12ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LampShade
+    second: {fileID: 2100000, guid: 6361408c1d2314549a541df823e53b32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LampShade.002
+    second: {fileID: 2100000, guid: 512f26f0bb556fd45bcc42eeed6b42b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamparas
+    second: {fileID: 2100000, guid: 918773fe776b3834983188cf528cd5e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lamparas.002
+    second: {fileID: 2100000, guid: 894b1ba876f76a64bb05b84c1bc12009, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LevelColor
+    second: {fileID: 2100000, guid: 5055234e59be0e94ca8ee06feaee44ac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Libro
+    second: {fileID: 2100000, guid: 9a0051f9aeb30d74e9ec2d60f8442c9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Libro1
+    second: {fileID: 2100000, guid: 8ef0f4b0666f93743b2c187fbcdf852c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Libro3
+    second: {fileID: 2100000, guid: b71b05cf9b384be478e96b4dddd27a8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Libro4
+    second: {fileID: 2100000, guid: 31b7afb193fa5724abdcc90242e11d68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Libro5
+    second: {fileID: 2100000, guid: e7ebecce53eff3e44b02aa3368676f3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madera
+    second: {fileID: 2100000, guid: df63c5ca05a23794989c8d109490c01c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble
+    second: {fileID: 2100000, guid: b3d61c43db855f749b3b51f3a44bec1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble.001
+    second: {fileID: 2100000, guid: c0eb7e63327c0d94389b32120c68290a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble.002
+    second: {fileID: 2100000, guid: bfb65ae6bc1954e4fb9ed9cf5342c5e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble.003
+    second: {fileID: 2100000, guid: 64bb1dde76dbfc042a9acbadbff03451, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Marble.004
+    second: {fileID: 2100000, guid: 3e7191688d907784ebb78b30e076c178, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MarcoPuerta
+    second: {fileID: 2100000, guid: 1759774ac6b9c594cbf119c2f2af3a74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PVC
+    second: {fileID: 2100000, guid: 1988a52182fde4841a6154d6781759db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PVC.001
+    second: {fileID: 2100000, guid: 7e8a0fcfb3dc10b4f8055af29f0dadd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PVC.002
+    second: {fileID: 2100000, guid: 596658425d4f7e44f98b2cf864310d53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PVC.003
+    second: {fileID: 2100000, guid: 42938b3b8752659449fcd0dcbb04495f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PVC.004
+    second: {fileID: 2100000, guid: 9e0fb386cd46aa6489ccf2fb4a2bc30a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic
+    second: {fileID: 2100000, guid: 085096540462c444fb4d46ab8bfeae0d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic.001
+    second: {fileID: 2100000, guid: 96a1643f371d30a4ebb93f2771550ee4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic.002
+    second: {fileID: 2100000, guid: 223fb73f2a1974742af29967f7c22305, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic.003
+    second: {fileID: 2100000, guid: 914f6afbc4c779448ae10ed5d15d6aea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic.004
+    second: {fileID: 2100000, guid: 9de89b00b05818046b78dd0a298b8112, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PuertaAscensor
+    second: {fileID: 2100000, guid: b6164c25db4e9b94ca2775886e475938, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Telefono.001
+    second: {fileID: 2100000, guid: 29c665ed2a762ab4faa8dec35829fa66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TelefonoPantalla.001
+    second: {fileID: 2100000, guid: b960419e6a38a124f9d9b1434a2ccf7e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -88,7 +283,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

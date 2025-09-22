@@ -1,0 +1,54 @@
+using UnityEngine;
+using UnityEngine.Animations.Rigging;
+
+public class PickItemAnimRig : MonoBehaviour
+{
+    [SerializeField] Rig rigArm;
+    [SerializeField] Transform target;
+    [SerializeField] Transform hand;
+    [SerializeField] BoxCollider refCollider;
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E)) PickItem();
+    }
+
+
+    void PickItem()
+    {
+        Collider[] objectsOnRange = Physics.OverlapBox(refCollider.transform.position, refCollider.size/2,refCollider.transform.rotation); 
+
+        foreach (Collider collider in objectsOnRange)
+        {
+            if(collider.TryGetComponent<Item>(out Item itemPicked))
+                if(itemPicked.itemType == ItemType.Throwable)
+                { 
+                    AnimPicking(collider.transform);
+                    return;
+                }
+        }
+    }
+
+    void AnimPicking(Transform posItem)
+    {
+        target.transform.position = posItem.position;
+        LeanTween.value(gameObject, 0, 1, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc().setOnComplete(() => {
+
+            posItem.SetParent(hand);
+            LeanTween.value(gameObject, 1, 0, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc();
+        });
+
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(refCollider.transform.position, refCollider.size);
+        Gizmos.matrix = refCollider.transform.localToWorldMatrix;
+      
+    }
+
+}

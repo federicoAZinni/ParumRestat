@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Item : IInteractable
+public class Item : MonoBehaviour
 {
-    
-    public void Interact()
-    {
-        
-    }
+    public ItemType itemType;
+}
 
+public enum ItemType
+{
+    Throwable,Important
 }
