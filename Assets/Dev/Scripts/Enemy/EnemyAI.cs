@@ -29,17 +29,17 @@ public class EnemyAI : MonoBehaviour
         patrolState = GetComponent<PatrolState>();
 
         currentState = idleState;
-        //ChangeState(patrolState);
+        ChangeState(patrolState);
     }
 
     private void Update()
     {
         currentState.OnUpdate();
-        if (onVision == OnVisionCone())
-        {
-            Debug.Log(onVision);
-        }
-        onVision = OnVisionCone();
+        //if (onVision == OnVisionCone())
+        //{
+        //    Debug.Log(onVision);
+        //}
+        //onVision = OnVisionCone();
 
     }
 
