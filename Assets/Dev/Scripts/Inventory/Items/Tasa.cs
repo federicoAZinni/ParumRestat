@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Tasa : Item,IInteractable
+public class Tasa : Item
 {
-    public void Interact()
+    public override void Interact()
     {
         
     }

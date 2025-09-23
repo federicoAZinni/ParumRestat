@@ -24,13 +24,18 @@ public class PickItemAnimRig : MonoBehaviour
             if(collider.TryGetComponent<Item>(out Item itemPicked))
                 if(itemPicked.itemType == ItemType.Throwable)
                 { 
-                    AnimPicking(collider.transform);
+                    AnimPickingITemThrowable(collider.transform);
+                    return;
+                }else if(itemPicked.itemType == ItemType.Important)
+                {
+                    AnimTouchItem(collider.transform);
+                    itemPicked.Interact();
                     return;
                 }
         }
     }
 
-    void AnimPicking(Transform posItem)
+    void AnimPickingITemThrowable(Transform posItem)
     {
         target.transform.position = posItem.position;
         LeanTween.value(gameObject, 0, 1, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc().setOnComplete(() => {
@@ -41,6 +46,15 @@ public class PickItemAnimRig : MonoBehaviour
 
     }
 
+    void AnimTouchItem(Transform posItem)
+    {
+        target.transform.position = posItem.position;
+        LeanTween.value(gameObject, 0, 1, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc().setOnComplete(() => {
+
+            LeanTween.value(gameObject, 1, 0, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc();
+        });
+
+    }
 
 
     private void OnDrawGizmos()

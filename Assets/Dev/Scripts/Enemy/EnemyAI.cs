@@ -15,6 +15,8 @@ public class EnemyAI : MonoBehaviour
     [Header("States")]
     IdleState idleState;
     PatrolState patrolState;
+    WatchState watchState;
+    PhoneCallState phoneCallState;
 
     [Space(5)]
     [Header("Vision Parameters")]
@@ -27,6 +29,8 @@ public class EnemyAI : MonoBehaviour
     {
         idleState = GetComponent<IdleState>();
         patrolState = GetComponent<PatrolState>();
+        watchState = GetComponent<WatchState>();
+        phoneCallState = GetComponent<PhoneCallState>();
 
         currentState = idleState;
         ChangeState(patrolState);
@@ -35,11 +39,15 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         currentState.OnUpdate();
-        //if (onVision == OnVisionCone())
-        //{
-        //    Debug.Log(onVision);
-        //}
-        //onVision = OnVisionCone();
+
+        if (onVision != OnVisionCone())
+        {
+            ChangeState(watchState);
+        }
+        onVision = OnVisionCone();
+
+        Vector3 dir = (target.transform.position - transform.position);
+        Debug.DrawRay(transform.position, dir * distanceVision);
 
     }
 
@@ -63,6 +71,12 @@ public class EnemyAI : MonoBehaviour
         
         return true;
 
+    }
+
+    public void OnPhoneCalling(Transform targetPhone)
+    {
+        phoneCallState.targetPhone = targetPhone;
+        ChangeState(phoneCallState);    
     }
 
     private void OnDrawGizmos()

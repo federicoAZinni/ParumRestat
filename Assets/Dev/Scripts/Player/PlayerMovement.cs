@@ -54,7 +54,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(1);
         while (onCover)
         {
-            if (!Physics.Raycast(transform.position, -transform.forward, out RaycastHit hit, 1, layer))
+            Vector3 posRay = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
+            if (!Physics.Raycast(posRay, -transform.forward, out RaycastHit hit, 1, layer))
             {
                 onCover = false;
                 OnCover();
@@ -64,7 +65,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCover()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, 0.25f, layer))
+        Vector3 posRay = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
+
+        if (Physics.Raycast(posRay, transform.forward, out RaycastHit hit, 0.25f, layer))
         {
             OnCrouch(true);
             onCover = true;

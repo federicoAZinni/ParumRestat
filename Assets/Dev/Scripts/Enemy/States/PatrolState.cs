@@ -6,7 +6,6 @@ public class PatrolState : MonoBehaviour, IState
 {
     [Header("Dependecies")]
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Animator animator;
     [SerializeField] Transform wayPointParent;
     [SerializeField] Animator anim;
 
@@ -39,11 +38,13 @@ public class PatrolState : MonoBehaviour, IState
 
     public void OnFinish()
     {
+        agent.isStopped = true;
         StopCoroutine(patrol);
     }
 
     public void OnStart()
     {
+        agent.isStopped = false;
         ChangeToNextWayPoint();
         patrol = StartCoroutine(Patrol());
     }
