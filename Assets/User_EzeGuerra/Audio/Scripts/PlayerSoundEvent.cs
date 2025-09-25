@@ -4,6 +4,6 @@ public class PlayerSoundEvent : MonoBehaviour
 {
     public void PlayFootstepOnFrame()
     {
-        PlayerSoundSystem.PlaySound(SoundType.FOOTSTEPS);
+        PlayerSoundSystem.PlaySonido(TipoSonido.PASOS);
     }
 }
