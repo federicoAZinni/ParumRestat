@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Linq;
-using UnityEditor.Animations;
-
 public class SoundEvent : MonoBehaviour
 {
     AudioSource _audioSource;

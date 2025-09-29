@@ -1504,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1965173310935770504, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_text
-      value: Valentin Lamas - Audio
+      value: Valentin Lamas - Concepto
       objectReference: {fileID: 0}
     - target: {fileID: 1973650271332317965, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1524,11 +1524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3129381350984801319, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3129381350984801319, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3129381350984801319, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1548,11 +1548,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3440281657102394104, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3440281657102394104, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3440281657102394104, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1651,7 +1651,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1919500069843386131, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
+    - {fileID: 2193518096991715788, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29b5a95fef211843bc534ef73eb00e0, type: 3}
