@@ -717,7 +717,7 @@ Transform:
   m_GameObject: {fileID: 2281391660344893540}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8.25}
+  m_LocalPosition: {x: 0, y: 0, z: 19.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1572,7 +1572,7 @@ Transform:
   m_GameObject: {fileID: 4292611047693369598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.06, y: 0, z: -0.88}
+  m_LocalPosition: {x: -4.06, y: 0, z: 8.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2013,6 +2013,8 @@ GameObject:
   - component: {fileID: 2283373978919783344}
   - component: {fileID: 7768058857856757326}
   - component: {fileID: 3697678914391721493}
+  - component: {fileID: 7322189355319416517}
+  - component: {fileID: 260379820763391733}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2097,6 +2099,8 @@ MonoBehaviour:
   target: {fileID: 0}
   distanceVision: 7.2
   amplitudeVision: 0.81
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 0}
 --- !u!114 &7768058857856757326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2122,11 +2126,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 8304304821778470042}
-  animator: {fileID: 7855722769771425815}
   wayPointParent: {fileID: 8179271921708797594}
   anim: {fileID: 7855722769771425815}
   distanceDetectionWayPoint: 1
   timeToWaitOnWayPoint: 2
+--- !u!114 &7322189355319416517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129206776029176380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8b4b1793a98e646bed944362476c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  animCinemachine: {fileID: 0}
+  animator: {fileID: 7855722769771425815}
+--- !u!114 &260379820763391733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129206776029176380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42daa1b38f164014fbfa17865d22e8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 8304304821778470042}
+  anim: {fileID: 7855722769771425815}
+  timeCall: 0
+  targetPhone: {fileID: 0}
 --- !u!1 &6269006167722949149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,7 +2285,7 @@ Transform:
   m_GameObject: {fileID: 7226715129971724071}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.37, y: 0, z: 8.25}
+  m_LocalPosition: {x: 2.98, y: 0, z: 26.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2931,7 +2965,7 @@ Transform:
   m_GameObject: {fileID: 9141881366859258461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.37, y: 0, z: -0.88}
+  m_LocalPosition: {x: 7.37, y: 0, z: 9.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
