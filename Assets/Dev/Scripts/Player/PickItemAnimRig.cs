@@ -25,6 +25,7 @@ public class PickItemAnimRig : MonoBehaviour
                 if(itemPicked.itemType == ItemType.Throwable)
                 { 
                     AnimPickingITemThrowable(collider.transform);
+                    itemPicked.Interact(); //Sumé esta linea para el sonido de las tazas -eze
                     return;
                 }else if(itemPicked.itemType == ItemType.Important)
                 {

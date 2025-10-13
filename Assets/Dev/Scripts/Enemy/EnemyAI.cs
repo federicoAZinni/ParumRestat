@@ -46,6 +46,8 @@ public class EnemyAI : MonoBehaviour
         }
         onVision = OnVisionCone();
 
+        watchState._detecting = OnVisionCone();
+
         Vector3 dir = (target.transform.position - transform.position);
         Debug.DrawRay(transform.position, dir * distanceVision);
 
@@ -70,7 +72,6 @@ public class EnemyAI : MonoBehaviour
             if (hit.transform != target.transform) return false;
         
         return true;
-
     }
 
     public void OnPhoneCalling(Transform targetPhone)
