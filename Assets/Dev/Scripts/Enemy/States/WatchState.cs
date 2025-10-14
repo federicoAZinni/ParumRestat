@@ -12,10 +12,13 @@ public class WatchState : MonoBehaviour, IState
     [SerializeField] public bool _detecting;
     bool _lockAnimation;
 
+    //DOTO Rehacer este estado.
+
     public void OnFinish()
     {
         _currentDetectionValue = 0; //resetear valor de detección al pasar a otro estado
     }
+
 
     public void OnStart()
     {
@@ -30,6 +33,9 @@ public class WatchState : MonoBehaviour, IState
     {
         if (!_lockAnimation && _currentDetectionValue == _maxDetectionValue) //si se acabó el valor máximo de detección, poner animación
             DetectionAnimation();
+
+        if(_currentDetectionValue> _maxDetectionValue) 
+
 
         if (!_detecting) //PENDIENTE: resolver retorno al estado de patrol, capaz todo esto deberia estar en OnFinish()
         {
