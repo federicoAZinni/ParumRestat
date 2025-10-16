@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/User_EzeGuerra/Scenes/MainMenu.unity
     guid: ea2191189d2fb974a9b7c81c5eb314f4
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Nivel1.unity
+    guid: 9e27a654859525a41a91e14e8c7f6772
   - enabled: 1
     path: Assets/Scenes/Nivel2.unity
     guid: afe869c0383f7ee4e9761347adf49c64
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
