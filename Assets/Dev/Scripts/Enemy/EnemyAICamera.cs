@@ -79,6 +79,7 @@ public class EnemyAICamera : Enemy
             _enemyDetectionBar.DecreaseBar(_currentDetectionValue);
             yield return null;
         }
+        _currentDetectionValue = 0;
     }
 
     void Catched() => enemiesManager.OnEnemyCatchPlayer(this);
