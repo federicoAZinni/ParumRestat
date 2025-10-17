@@ -2045,7 +2045,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectionBar: {fileID: 6233444087671076581}
-  _maxFill: 6
   _currentFill: 0
 --- !u!1 &5447487396822374477
 GameObject:
@@ -2279,14 +2278,14 @@ GameObject:
   - component: {fileID: 5302983473794506236}
   - component: {fileID: 5936224391821369296}
   - component: {fileID: 8304304821778470042}
-  - component: {fileID: 2283373978919783344}
   - component: {fileID: 7768058857856757326}
   - component: {fileID: 3697678914391721493}
   - component: {fileID: 7322189355319416517}
   - component: {fileID: 260379820763391733}
+  - component: {fileID: 4150061775634471843}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2354,21 +2353,6 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2283373978919783344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6129206776029176380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f8d6d14a2b313142b1e7360444853d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  distanceVision: 7.2
-  amplitudeVision: 0.81
 --- !u!114 &7768058857856757326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2410,12 +2394,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8b4b1793a98e646bed944362476c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  animCinemachine: {fileID: 0}
+  enemyAI: {fileID: 0}
   animator: {fileID: 7855722769771425815}
-  _enemyDetectionBar: {fileID: 0}
+  _enemyDetectionBar: {fileID: 2981934092064403222}
   _currentDetectionValue: 0
-  _maxDetectionValue: 0
+  _maxDetectionValue: 5
   _detecting: 0
 --- !u!114 &260379820763391733
 MonoBehaviour:
@@ -2433,6 +2416,22 @@ MonoBehaviour:
   anim: {fileID: 7855722769771425815}
   timeCall: 0
   targetPhone: {fileID: 0}
+--- !u!114 &4150061775634471843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129206776029176380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdb4188c2fcbad4ab4d4985b5f81e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesManager: {fileID: 0}
+  target: {fileID: 0}
+  distanceVision: 8
+  amplitudeVision: 0.8
 --- !u!1 &6269006167722949149
 GameObject:
   m_ObjectHideFlags: 0

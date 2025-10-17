@@ -1,16 +1,12 @@
 using System;
-using System.Net.Sockets;
-using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEngine.Rendering.HableCurve;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyAIPolice : Enemy
 {
     IState currentState;
-    [SerializeField] GameObject target;
-
+    
     [Space(5)]
     [Header("States")]
     IdleState idleState;
@@ -23,7 +19,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float distanceVision;
     [SerializeField] float amplitudeVision;
 
-    bool onVision;
     
     private void Start()
     {
@@ -40,14 +35,11 @@ public class EnemyAI : MonoBehaviour
     {
         currentState.OnUpdate();
 
-        if (onVision != OnVisionCone())
-        {
+        if (OnVisionCone())
             ChangeState(watchState);
-        }
-        onVision = OnVisionCone();
-
-        watchState._detecting = OnVisionCone();
-
+        else
+            ChangeState(patrolState);
+        
         Vector3 dir = (target.transform.position - transform.position);
         Debug.DrawRay(transform.position, dir * distanceVision);
 
@@ -98,5 +90,11 @@ public class EnemyAI : MonoBehaviour
 
     }
 
+}
+
+public class Enemy: MonoBehaviour
+{
+    public EnemiesManager enemiesManager;
+    public GameObject target;
 }
 

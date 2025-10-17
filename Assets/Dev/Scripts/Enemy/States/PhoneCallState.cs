@@ -21,6 +21,7 @@ public class PhoneCallState : MonoBehaviour, IState
 
     public void OnUpdate()
     {
+        if(!agent.hasPath) { return; }
         Animations();
     }
 

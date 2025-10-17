@@ -39,6 +39,7 @@ public class PatrolState : MonoBehaviour, IState
     public void OnFinish()
     {
         agent.isStopped = true;
+        anim.SetFloat("Speed", 0);
         StopCoroutine(patrol);
     }
 

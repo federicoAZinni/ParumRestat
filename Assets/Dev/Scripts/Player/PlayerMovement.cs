@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] CharacterController controller;
     [SerializeField] Transform camera_T;
+    public Transform cameraRefToEnemy;
 
     [Header("Movement Variables")]
     [SerializeField] float moveSpeed;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         speed = moveSpeed;
+        camera_T = Camera.main.transform;
     }
 
     private void Update()
@@ -36,17 +38,38 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) OnCover();
         if (Input.GetKeyDown(KeyCode.C)) OnCrouch();
     }
+
     private void OnCrouch()
     {
         onCrouch = !onCrouch;
         anim.SetBool("OnCrouch", onCrouch);
-        speed = onCrouch ? moveSpeedOnCrouch : moveSpeed;
+
+        if (onCrouch) 
+        { 
+            speed = moveSpeedOnCrouch;
+            controller.radius = 0.5f;
+        }
+        else 
+        { 
+            speed = moveSpeed;
+            controller.radius = 0.2f;
+        }
     }
     private void OnCrouch(bool temp)
     {
         onCrouch = temp;
         anim.SetBool("OnCrouch", onCrouch);
-        speed = onCrouch ? moveSpeedOnCrouch : moveSpeed;
+
+        if (onCrouch)
+        {
+            speed = moveSpeedOnCrouch;
+            controller.radius = 0.5f;
+        }
+        else
+        {
+            speed = moveSpeed;
+            controller.radius = 0.2f;
+        }
     }
 
     private IEnumerator CheckIfCanBeOnCover()

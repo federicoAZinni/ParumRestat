@@ -1,62 +1,62 @@
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class WatchState : MonoBehaviour, IState
 {
-    [SerializeField] CinemachineCamera cam;
-    [SerializeField] Animator animCinemachine;
+    [SerializeField] EnemyAIPolice enemyAI;
     [SerializeField] Animator animator;
-
     [SerializeField] EnemyDetectionBar _enemyDetectionBar;
     [SerializeField] float _currentDetectionValue, _maxDetectionValue;
     [SerializeField] public bool _detecting;
-    bool _lockAnimation;
 
-    //DOTO Rehacer este estado.
+
+    Coroutine tempCoroutine;
 
     public void OnFinish()
     {
-        _currentDetectionValue = 0; //resetear valor de detección al pasar a otro estado
+        StopCoroutine(tempCoroutine);
+        StartCoroutine(DownDetection());
     }
 
 
     public void OnStart()
     {
-        InvokeRepeating("UpdateDetection", 0, 1f);
-
-        /*cam.Target = new CameraTarget { TrackingTarget = transform, LookAtTarget = transform };
-        animCinemachine.Play("EnemyCameraFinishEvent");
-        animator.SetTrigger("Pointing");*/
+        animator.Play("Looking");
+        if (tempCoroutine != null) StopCoroutine(tempCoroutine);
+        tempCoroutine = StartCoroutine(UpDetection());
     }
 
-    public void OnUpdate()
+
+    public void OnUpdate(){}
+
+
+    private IEnumerator UpDetection()
     {
-        if (!_lockAnimation && _currentDetectionValue == _maxDetectionValue) //si se acabó el valor máximo de detección, poner animación
-            DetectionAnimation();
-
-        if(_currentDetectionValue> _maxDetectionValue) 
-
-
-        if (!_detecting) //PENDIENTE: resolver retorno al estado de patrol, capaz todo esto deberia estar en OnFinish()
+        while (_currentDetectionValue < 1)
         {
-            _enemyDetectionBar.ResetBar();
-            CancelInvoke("UpdateDetection");
+            _currentDetectionValue += Time.deltaTime/ _maxDetectionValue;
+            _enemyDetectionBar.DecreaseBar(_currentDetectionValue);
+            yield return null;
+        }
+
+      Catched();
+    }
+
+    private IEnumerator DownDetection()
+    {
+        while (0 <= _currentDetectionValue)
+        {
+            _currentDetectionValue -= Time.deltaTime/ _maxDetectionValue;
+            _enemyDetectionBar.DecreaseBar(_currentDetectionValue);
+            yield return null;
         }
     }
 
-    private void UpdateDetection()
+    private void Catched()
     {
-        _currentDetectionValue += 1;
-        _enemyDetectionBar.DecreaseBar(_currentDetectionValue);
-        //Debug.Log(_currentDetectionValue);
-    }
-
-    private void DetectionAnimation()
-    {
-        cam.Target = new CameraTarget { TrackingTarget = transform, LookAtTarget = transform };
-        animCinemachine.Play("EnemyCameraFinishEvent");
         animator.SetTrigger("Pointing");
-
-        _lockAnimation = true; //llamar animación una sola vez
+        enemyAI.enemiesManager.OnEnemyCatchPlayer(enemyAI);
     }
 }
