@@ -21,11 +21,13 @@ public class EnemiesManager : MonoBehaviour
 
     private void Start()
     {
-        Enemy[] temp = FindObjectsByType<Enemy>(FindObjectsSortMode.None);
+        Enemy[] temp = FindObjectsByType<Enemy>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
         foreach (Enemy enemy in temp)
         {
             enemy.enemiesManager = this;
             enemy.target = GameManager.instance.playerMovement.cameraRefToEnemy.gameObject;
+            enemy.gameObject.SetActive(true);
             currentEnemies.Add(enemy);
         }    
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1068412848262211759}
   - component: {fileID: 8174032048563171778}
   - component: {fileID: 1992246494898767514}
-  - component: {fileID: 7091802244662942123}
+  - component: {fileID: 1308510004223221163}
   m_Layer: 0
   m_Name: EnemyCameraAnimation
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6197009400188003886}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.38558397, z: 0, w: 0.92267275}
-  m_LocalPosition: {x: 7.2264347, y: -5.229942, z: 16.15453}
+  m_LocalRotation: {x: 0.080020174, y: 0.38413116, z: -0.033440348, w: 0.91919625}
+  m_LocalPosition: {x: 11.495649, y: -4.529942, z: 20.37043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LookAtOffset: {x: 0, y: 0, z: 0}
---- !u!114 &7091802244662942123
+--- !u!114 &1308510004223221163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,16 +99,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6197009400188003886}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrackerSettings:
-    BindingMode: 0
-    PositionDamping: {x: 1, y: 1, z: 1}
-    AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
-    QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: 4}
+  Damping: {x: 0.1, y: 0.5, z: 0.3}
+  ShoulderOffset: {x: 0, y: 0, z: 4}
+  VerticalArmLength: 0.7
+  CameraSide: 1
+  CameraDistance: 0
+  AvoidObstacles:
+    Enabled: 1
+    CollisionFilter:
+      serializedVersion: 2
+      m_Bits: 64
+    IgnoreTag: 
+    CameraRadius: 0.2
+    DampingIntoCollision: 0
+    DampingFromCollision: 0.5
 --- !u!1 &8855045238002128492
 GameObject:
   m_ObjectHideFlags: 0

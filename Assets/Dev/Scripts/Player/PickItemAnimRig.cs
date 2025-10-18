@@ -21,7 +21,9 @@ public class PickItemAnimRig : MonoBehaviour
 
         foreach (Collider collider in objectsOnRange)
         {
-            if(collider.TryGetComponent<Item>(out Item itemPicked))
+            if(collider.TryGetComponent<Item>(out Item itemPicked)) 
+            {
+                if (itemPicked.isOnHand) return;
                 if(itemPicked.itemType == ItemType.Throwable)
                 { 
                     AnimPickingITemThrowable(collider.transform);
@@ -33,6 +35,7 @@ public class PickItemAnimRig : MonoBehaviour
                     itemPicked.Interact();
                     return;
                 }
+            }
         }
     }
 
@@ -42,6 +45,7 @@ public class PickItemAnimRig : MonoBehaviour
         LeanTween.value(gameObject, 0, 1, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc().setOnComplete(() => {
 
             posItem.SetParent(hand);
+            posItem.localPosition = Vector3.zero;
             LeanTween.value(gameObject, 1, 0, 0.3f).setOnUpdate((value) => { rigArm.weight = value; }).setEaseInCirc();
         });
 

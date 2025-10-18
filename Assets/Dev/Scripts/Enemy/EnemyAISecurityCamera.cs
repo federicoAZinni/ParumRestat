@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Data;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class EnemyAICamera : Enemy
+public class EnemyAISecurityCamera : Enemy
 {
     [SerializeField] Transform refToMove;
     [SerializeField] Transform refCameraToMove;
@@ -11,7 +12,7 @@ public class EnemyAICamera : Enemy
     [SerializeField] SplineAnimate splineAnimate;
     [SerializeField] float _currentDetectionValue, _maxDetectionValue;
     [SerializeField] EnemyDetectionBar _enemyDetectionBar;
-
+    bool turnOff;
 
     enum StateCamera { onVision,outVision}
     StateCamera currentState = StateCamera.outVision;
@@ -25,6 +26,8 @@ public class EnemyAICamera : Enemy
 
     private void FixedUpdate()
     {
+        if (turnOff) return;
+
         Collider[] objectsOnRange = Physics.OverlapSphere(refToMove.transform.position, radius);
 
         foreach (Collider collider in objectsOnRange)
@@ -83,6 +86,13 @@ public class EnemyAICamera : Enemy
     }
 
     void Catched() => enemiesManager.OnEnemyCatchPlayer(this);
+
+    public void TurnOffCamera()
+    {
+        turnOff = true;
+        refToMove.gameObject.SetActive(false);
+        splineAnimate.Pause();
+    }
     
 
     private void OnDrawGizmos()

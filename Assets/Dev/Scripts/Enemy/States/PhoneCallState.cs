@@ -21,7 +21,7 @@ public class PhoneCallState : MonoBehaviour, IState
 
     public void OnUpdate()
     {
-        if(!agent.hasPath) { return; }
+        if(Vector3.Distance(transform.position, targetPhone.position) > 1) { return; }
         Animations();
     }
 
