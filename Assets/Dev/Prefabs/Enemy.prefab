@@ -2368,7 +2368,7 @@ MonoBehaviour:
   enemiesManager: {fileID: 0}
   target: {fileID: 0}
   distanceVision: 8
-  amplitudeVision: 0.16
+  amplitudeVision: 0.25
 --- !u!114 &7768058857856757326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2393,6 +2393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b5c6cb855848144ad07a5980361052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
   agent: {fileID: 8304304821778470042}
   wayPointParent: {fileID: 8179271921708797594}
   anim: {fileID: 7855722769771425815}
@@ -2432,6 +2433,7 @@ MonoBehaviour:
   anim: {fileID: 7855722769771425815}
   timeCall: 0
   targetPhone: {fileID: 0}
+  enemyAI: {fileID: 0}
 --- !u!1 &6269006167722949149
 GameObject:
   m_ObjectHideFlags: 0

@@ -1403,7 +1403,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 329292067070416774}
-  - component: {fileID: 1446718276054036077}
   - component: {fileID: 7878274864956756276}
   - component: {fileID: 4183842565579049167}
   - component: {fileID: 8378669756065990550}
@@ -1432,29 +1431,6 @@ Transform:
   - {fileID: 8795312361993896431}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!136 &1446718276054036077
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4303269225966344123}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &7878274864956756276
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2693,7 +2669,7 @@ Transform:
   m_GameObject: {fileID: 8233083092416639028}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000000011641531, y: -0.000000101792565, z: 0.00004363301, w: 1}
-  m_LocalPosition: {x: -0, y: 0.137, z: 0.205}
+  m_LocalPosition: {x: 0, y: 0.137, z: 0.051}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2716,7 +2692,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.13
   m_Center: {x: 0, y: 0, z: 0}

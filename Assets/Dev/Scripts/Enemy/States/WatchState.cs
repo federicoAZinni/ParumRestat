@@ -14,6 +14,11 @@ public class WatchState : MonoBehaviour, IState
 
     Coroutine tempCoroutine;
 
+    private void Awake()
+    {
+        enemyAI = GetComponent<EnemyAIPolice>();
+    }
+
     public void OnFinish()
     {
         StopCoroutine(tempCoroutine);
@@ -29,9 +34,12 @@ public class WatchState : MonoBehaviour, IState
     }
 
 
-    public void OnUpdate(){}
+    public void OnUpdate()
+    {
+        if (!enemyAI.OnVisionCone()) enemyAI.ChangeState(TypeState.patrolState);
+    }
 
-
+   
     private IEnumerator UpDetection()
     {
         while (_currentDetectionValue < 1)

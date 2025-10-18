@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (onCrouch) 
         { 
             speed = moveSpeedOnCrouch;
-            controller.radius = 0.5f;
+            controller.radius = 0.6f;
         }
         else 
         { 
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         if (onCrouch)
         {
             speed = moveSpeedOnCrouch;
-            controller.radius = 0.5f;
+            controller.radius = 0.6f;
         }
         else
         {

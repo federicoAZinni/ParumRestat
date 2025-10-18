@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class PatrolState : MonoBehaviour, IState
 {
     [Header("Dependecies")]
+    [SerializeField] EnemyAIPolice enemyAI;
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform wayPointParent;
     [SerializeField] Animator anim;
@@ -22,6 +23,8 @@ public class PatrolState : MonoBehaviour, IState
     Coroutine patrol;
     private void Awake()
     {
+        enemyAI = GetComponent<EnemyAIPolice>();
+
         int wayPointsCount = wayPointParent.childCount;
         wayPointPos = new Vector3[wayPointsCount];
 
@@ -53,6 +56,7 @@ public class PatrolState : MonoBehaviour, IState
     public void OnUpdate()
     {
         Animations();
+        if (enemyAI.OnVisionCone()) enemyAI.ChangeState(TypeState.watchState);  
     }
 
     IEnumerator Patrol()

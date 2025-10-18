@@ -32,8 +32,11 @@ public class EnemyAISecurityCamera : Enemy
 
         foreach (Collider collider in objectsOnRange)
         {
-            if (collider.CompareTag("Player"))
-                ChangeState(StateCamera.onVision);
+            if (collider.CompareTag("Player") )
+            {
+                Physics.Raycast(refCameraToMove.transform.position, (collider.transform.position- refCameraToMove.transform.position).normalized, out RaycastHit hit, 50);
+                if(hit.transform.CompareTag("Player")) ChangeState(StateCamera.onVision);
+            } 
             else
                 ChangeState(StateCamera.outVision);
         }
